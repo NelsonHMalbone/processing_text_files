@@ -15,7 +15,7 @@ filepaths = sorted(glob.glob("files/*.txt")) # also known as a pattern
 # list of something what to iteriate
 
 word_frequencies = {} # gets define outside of for loop
-
+"use a dictionary {} each word is a key and frequencie is value"
 for filepath in filepaths:
     with open(filepath, 'r') as file:
         content = file.read()
@@ -25,6 +25,17 @@ for filepath in filepaths:
 
         for word in words:
             if not word in word_frequencies:
-                word_frequencies[word] = 1
-            else:
+                word_frequencies[word] = 1 # int method
+            else: # if word is in list then it adds 1
                 word_frequencies[word] += 1
+
+# creating doc with word freqencies
+with open('word_frequencies.txt', 'w') as file:
+    for word, count in word_frequencies.items(): # this makes the word_frequencie into a str
+        'access each key and value'
+        content = file.write(f'{word}: {count}\n') # only accepts str method
+        """
+        take the dictionary 
+         word = key
+         int = value         
+        """
