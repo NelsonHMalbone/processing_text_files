@@ -13,7 +13,18 @@ filepaths = sorted(glob.glob("files/*.txt")) # also known as a pattern
 
 # open each text file
 # list of something what to iteriate
+
+word_frequencies = {} # gets define outside of for loop
+
 for filepath in filepaths:
     with open(filepath, 'r') as file:
         content = file.read()
 
+        words = content.split() # treats each word as a seperate item
+
+
+        for word in words:
+            if not word in word_frequencies:
+                word_frequencies[word] = 1
+            else:
+                word_frequencies[word] += 1
