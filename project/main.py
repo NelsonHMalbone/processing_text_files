@@ -2,6 +2,7 @@
 # using the glob
 import glob
 
+# CAN BE DANGEROUS TO DO THIS WITH VERY LARGE FILES
 with open('combined_files.txt', 'w') as outfile: # creating new file
     for filename in sorted(glob.glob('files/*.txt')): # interating over each file
         with open(filename) as infile: # opens each file to read
